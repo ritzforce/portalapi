@@ -16,6 +16,10 @@ require('./server/config/startup')(app);
 // Logger is configured at this point
 let logger = require('./server/logger/logger');
 
+app.get('/echo', function(req, res) {
+	res.status(200).json({message : 'echo Successful'});
+});
+
 // Handle unhandled errors and send back the message for the UI to be useful
 app.use(function (err, req, res, next) {
   logger.error(err);
