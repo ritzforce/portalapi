@@ -9,9 +9,7 @@
   "keywords": [
     "Portal"
   ],
-  "scripts": {
-  
-  },
+  "scripts": {},
   "standard": {
     "globals": [
       "__DEV__"
@@ -74,6 +72,7 @@
     "bootstrap-loader": "^1.0.10",
     "bootstrap-sass": "^3.3.6",
     "composable-middleware": "^0.3.0",
+    "cors": "^2.8.1",
     "css-loader": "^0.19.0",
     "express": "^4.12.3",
     "express-jwt": "^5.1.0",
@@ -81,9 +80,9 @@
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "isomorphic-fetch": "^2.2.1",
+    "jsforce": "^1.7.1",
     "jsonwebtoken": "^7.2.1",
     "jwt-decode": "^2.1.0",
-	"jsforce":"^1.7.1",
     "lodash": "^4.17.4",
     "lodash.chunk": "^4.2.0",
     "lodash.reverse": "^4.0.1",

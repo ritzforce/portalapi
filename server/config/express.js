@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var methodOverride = require('method-override');
+var cors = require('cors')
 
 module.exports = function (app) {
 
@@ -13,11 +14,6 @@ module.exports = function (app) {
   
   app.set('trust proxy', 'loopback');
 
-  // CORS Configuration, we would like to white list only our IPs and Domains
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+  app.use(cors());
 
 };
