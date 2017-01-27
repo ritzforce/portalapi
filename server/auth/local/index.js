@@ -20,6 +20,7 @@ router.post('/', function (req, res, next) {
 		logger.info('***authentication successful*****');
 		logger.info(user);
 		
+		logger.info('***Auth is about o Sign Token');
 		var token = auth.signToken(user, (err, token) => {
 			if(err) {
 				res.status(500).send({ message: 'Something went wrong in generating token, please try again.' });
