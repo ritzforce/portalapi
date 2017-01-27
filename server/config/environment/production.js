@@ -24,7 +24,7 @@ module.exports = {
     password: process.env.SFDC_PASSWORD,
     token: process.env.SFDC_TOKEN ,
     endPoint: process.env.SFDC_ENDPOINT
-  }
+  },
   
   log: {
     logLevel : process.env.LOG_LEVEL || 'debug' 
