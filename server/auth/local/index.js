@@ -24,14 +24,12 @@ router.post('/', function (req, res, next) {
 	passport.authenticate('local',{session: false}, function (err, user, info) {
 		logger.debug('Inside the Authenticate method', err, user, info);
 		var error = err || info;
-		if (error) return res.json(401, {message : error.message});
+		if (error) return res.json(401, { message : error.message});
 		if (!user) return res.json(404, { message: 'Something went wrong, please try again.' });
 
-		logger.info('***authentication successful*****');
-		logger.info(user);
-		
-		logger.info('***Auth is about o Sign Token');
+		logger.info('***Auth is about o Sign Token******');
 		var token = auth.signToken(user, (err, token) => {
+			logger.info('*****Token Signed****')
 			if(err) {
 				res.status(500).send({ message: 'Something went wrong in generating token, please try again.' });
 			}
