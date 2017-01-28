@@ -8,6 +8,16 @@ let metadata = require('./../../metadata');
 
 var router = express.Router();
 
+router.post('/sign' , function(req, res, next) {
+	logger.debug('Inside the Sign method');
+	var token = auth.signToken({'id': 'Ritesh'}, (err, token) => {
+		logger.debug('Token generated', token);
+		res.json({token : token});
+	});
+
+	logger.debug('Exit the Sign method');
+});
+
 router.post('/', function (req, res, next) {
 	logger.debug('Entering login');
 
