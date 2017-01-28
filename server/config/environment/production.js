@@ -19,6 +19,10 @@ module.exports = {
      tags: process.env.LOGGLY_TAGS 
   },
 
+  cors: {
+    whitelist: process.env.CORS_WHITELIST
+  },
+
   salesforce: {
     username: process.env.SFDC_USERNAME ,
     password: process.env.SFDC_PASSWORD,
