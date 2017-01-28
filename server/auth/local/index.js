@@ -21,9 +21,10 @@ router.post('/sign' , function(req, res, next) {
 router.post('/', function (req, res, next) {
 	logger.debug('Entering login');
 
-	passport.authenticate('local',{session: false}, function (err, user, info) {
-		logger.debug('Inside the Authenticate method', err, user, info);
-		var error = err || info;
+	passport.authenticate('local', {session: false}, function (err, user) {
+		logger.debug('local.index callback received');
+		logger.debug('Inside the Authenticate method', err, user);
+		var error = err;
 		if (error) return res.json(401, { message : error.message});
 		if (!user) return res.json(404, { message: 'Something went wrong, please try again.' });
 

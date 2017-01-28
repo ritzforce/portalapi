@@ -20,15 +20,24 @@ exports.setup = function (config) {
         password,
         function (err, user) {
           if (err) {
+            logger.info('Error Occurred')
             logger.error(err);
           }
           logger.info('Authentication successful user received', user);
-          if (err) return done(err, null);
-
-          if (!user) {
-            return done(null, false, {message: 'The email or password is not correct. Please try again'});
+          logger.info(err);
+          if ( err ) {
+            logger.info('Error Occurred', err);
+            done(err, null);
+            return;
           }
-          return done(null, user);
+
+          if (! user) {
+            done(null, false, {message: 'The email or password is not correct. Please try again'});
+            return;
+          }
+          logger.debug('Passport.Callback User Exit')
+          done(null, user);
+          return;
         });
     }
   ));
